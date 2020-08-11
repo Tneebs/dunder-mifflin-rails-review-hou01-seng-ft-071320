@@ -1,0 +1,19 @@
+<h1> All the dogs </h1>
+
+<% if params[:sort] == "true" %>
+    <%= link_to "Sort by Number of Owners ⬇", "#{dogs_path}?sort=false" %>
+    <% @dogs = @dogs.sort_by{|dog| dog.employees.count} %>
+<% else %>
+    <%= link_to "Sort by Number of Owners ⬆", "#{dogs_path}?sort=true" %>
+    <% @dogs = @dogs.sort_by{|dog| dog.employees.count}.reverse %>
+<% end %>
+
+<ul>
+    <% @dogs.each do |d| %>
+        <a href='/dogs/<%= d.id %>'>
+        <li><%= d.name %></li>
+        </a>
+    <% end %>
+</ul>
+
+

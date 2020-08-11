@@ -1,0 +1,17 @@
+<h1> Employee Info </h1>
+<u><h2> <%=@employee.first_name %> <%=@employee.last_name %> </h2></u>
+
+
+<img src= <%= @employee.img_url%> >
+
+<h3> Alias: <%=@employee.alias%> </h3>
+<h3> Title: <%=@employee.title%> </h3>
+<h3> Office: <%=@employee.office%> </h3>
+<h3> Dog: <%=@employee.dog.name%> </h3>
+
+<br>
+<%= button_to "Edit Employee Info", { :action => "edit"}, :method => :get %>
+<br>
+
+
+    
